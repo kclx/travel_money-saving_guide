@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="yku">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/yku.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
