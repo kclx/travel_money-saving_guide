@@ -1,6 +1,7 @@
 package pers.orlando.travelmoneysavingguide;
 
 import co.SeqList;
+import pers.orlando.travelmoneysavingguide.transportationtool.TransportationTool;
 
 import java.util.Objects;
 
@@ -31,6 +32,7 @@ public class Matrix {
             for (int j = 0; j < this.count; j++) {
                 if(Objects.equals(values[i][j].getStart(), values[i][j].getEnd())){
                     values[i][j].setTransportationTool(null);
+                    values[i][j].setDistance(TransportationTool.MAX_WEIGHT);
                     this.element.get(i).insert(j,values[i][j]);
                 }
                 else this.element.get(i).insert(j,values[i][j]);
