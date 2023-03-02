@@ -1,7 +1,8 @@
 package pers.orlando.travelmoneysavingguide.transportationtool;
 
 public abstract class TransportationTool {
-    protected static final int NULL = -1;
+    public static final double MAX_WEIGHT = 0x00ffffff;
+
     public String name;
     private String id;
     public double consumeTime;//时间--min

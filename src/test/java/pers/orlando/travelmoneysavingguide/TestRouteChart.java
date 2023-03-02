@@ -7,6 +7,7 @@ import pers.orlando.travelmoneysavingguide.transportationtool.TransportationTool
 import pers.orlando.travelmoneysavingguide.transportationtool.impl.HighSpeedTrain;
 import pers.orlando.travelmoneysavingguide.transportationtool.impl.Train;
 
+import java.util.Arrays;
 import java.util.UUID;
 
 /**
@@ -117,6 +118,7 @@ public class TestRouteChart {
         Tripe tripe1 = new Tripe("石家庄", "沈阳", 400, new Train[]{new Train("K335", 481, 91)});
         tripe.setTransportationTool("高铁", "G1213", 163, 290);
         routeChart.set(tripe1);
+        System.out.println(routeChart.cityCount());
         System.out.println(routeChart.getMatrix());
     }
 
@@ -140,5 +142,26 @@ public class TestRouteChart {
     public void create() {
         Matrix matrix = new Matrix(tripess);
         System.out.println(matrix);
+    }
+
+    @Test
+    public void shorForDistancePath() {
+        double shorForDistancePath = routeChart.shorForDistancePath("天津","南京");
+        System.out.println(shorForDistancePath+"km");
+        System.out.println(routeChart.getMatrix());
+    }
+
+    @Test
+    public void shorForMoneyPath() {
+        double shorForDistancePath = routeChart.shorForMoneyPath("沈阳","南京");
+        System.out.println(shorForDistancePath+"¥");
+        System.out.println(routeChart.getMatrix());
+    }
+
+    @Test
+    public void shorForTimePath() {
+        double shorForDistancePath = routeChart.shorForTimePath("沈阳","南京");
+        System.out.println(shorForDistancePath+"min");
+        System.out.println(routeChart.getMatrix());
     }
 }
